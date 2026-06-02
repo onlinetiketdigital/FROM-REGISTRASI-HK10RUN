@@ -2,510 +2,154 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HK 10K Registration</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HK10K Registration</title>
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    background:
-    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.92)),
-    url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1920');
-    background-size:cover;
-    background-position:center;
-    min-height:100vh;
-    color:white;
-}
-
-.container{
-    max-width:850px;
-    margin:auto;
-    padding:30px 20px 60px;
-}
-
-.header{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.logo{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 25px;
-    border:2px solid #ffcc33;
-    border-radius:50px;
-    background:rgba(255,204,51,.08);
-    box-shadow:0 0 20px rgba(255,204,51,.3);
-}
-
-.logo h1{
-    color:#ffcc33;
-    font-size:42px;
-    font-weight:800;
-}
-
-.tagline{
-    color:#f5d36c;
-    margin-top:10px;
-    letter-spacing:2px;
-    font-size:14px;
-}
-
-.form-card{
-    background:rgba(20,20,20,.95);
-    border:1px solid rgba(255,204,51,.25);
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:
-    0 0 25px rgba(255,204,51,.15),
-    0 0 80px rgba(255,204,51,.05);
-}
-
-.progress{
-    display:flex;
-}
-
-.step{
-    flex:1;
-    text-align:center;
-    padding:18px;
-    font-weight:700;
-    background:#222;
-    color:#888;
-    border-right:1px solid #333;
-}
-
-.step.active{
-    background:linear-gradient(90deg,#ffcc33,#f5a623);
-    color:#111;
-}
-
-.content{
-    padding:30px;
-}
-
-.page{
-    display:none;
-    animation:fade .4s ease;
-}
-
-.page.active{
-    display:block;
-}
-
-@keyframes fade{
-    from{opacity:0;transform:translateY(10px)}
-    to{opacity:1;transform:translateY(0)}
-}
-
-.title{
-    font-size:28px;
-    font-weight:800;
-    color:#ffcc33;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    color:#aaa;
-    margin-bottom:25px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-
-.input-group{
-    margin-bottom:18px;
-}
-
-label{
-    display:block;
-    margin-bottom:8px;
-    font-size:14px;
-    color:#f8d977;
-}
-
-input,select{
-    width:100%;
-    padding:15px;
-    border-radius:12px;
-    border:1px solid #444;
-    background:#111;
-    color:white;
-    outline:none;
-}
-
-input:focus,
-select:focus{
-    border-color:#ffcc33;
-    box-shadow:0 0 12px rgba(255,204,51,.3);
-}
-
-.category{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.card-option{
-    cursor:pointer;
-    border:2px solid #333;
-    border-radius:18px;
-    padding:18px;
-    background:#111;
-    transition:.3s;
-}
-
-.card-option:hover{
-    transform:translateY(-4px);
-    border-color:#ffcc33;
-}
-
-.card-option.active{
-    border-color:#ffcc33;
-    box-shadow:0 0 20px rgba(255,204,51,.25);
-}
-
-.card-option h3{
-    color:#ffcc33;
-}
-
-.price{
-    margin-top:10px;
-    font-size:28px;
-    font-weight:800;
-}
-
-.benefit{
-    margin-top:12px;
-    color:#bbb;
-    font-size:14px;
-}
-
-.summary{
-    background:#111;
-    border:1px solid #333;
-    padding:20px;
-    border-radius:16px;
-}
-
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    padding:10px 0;
-    border-bottom:1px solid #222;
-}
-
-.summary-row:last-child{
-    border:none;
-}
-
-.buttons{
-    display:flex;
-    justify-content:space-between;
-    margin-top:30px;
-}
-
-button{
-    border:none;
-    cursor:pointer;
-    padding:14px 30px;
-    border-radius:14px;
-    font-weight:700;
-}
-
-.btn-prev{
-    background:#333;
-    color:white;
-}
-
-.btn-next,
-.btn-submit{
-    background:linear-gradient(90deg,#ffcc33,#f5a623);
-    color:#111;
-}
-
-.btn-submit{
-    font-size:16px;
-}
-
-.footer{
-    text-align:center;
-    margin-top:25px;
-    color:#777;
-    font-size:13px;
-}
-
-@media(max-width:768px){
-
-.grid,
-.category{
-    grid-template-columns:1fr;
-}
-
-.title{
-    font-size:24px;
-}
-
-.logo h1{
-    font-size:32px;
-}
-}
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:#0f0f0f;color:#fff}
+.wrap{max-width:900px;margin:auto;padding:20px}
+.card{background:#181818;border:1px solid #d4af37;border-radius:18px;overflow:hidden}
+.head{padding:25px;text-align:center;background:linear-gradient(90deg,#d4af37,#f5d36c);color:#111;font-weight:bold}
+.steps{display:flex}
+.step{flex:1;padding:12px;text-align:center;background:#222;color:#888}
+.active{background:#d4af37!important;color:#111!important}
+.content{padding:20px}
+.page{display:none}
+.page.show{display:block}
+input,select{width:100%;padding:12px;margin-top:6px;background:#111;border:1px solid #444;color:#fff;border-radius:10px}
+label{display:block;margin:12px 0}
+.btns{display:flex;justify-content:space-between;margin-top:20px}
+button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
+.next,.submit{background:#d4af37}
+.prev{background:#444;color:#fff}
+.opt{border:2px solid #444;padding:15px;border-radius:12px;margin:10px 0;cursor:pointer}
+.opt.sel{border-color:#d4af37}
+.err{color:#ff6b6b;font-size:13px}
+.qr{max-width:280px;width:100%;background:#fff;padding:10px;border-radius:10px}
+.summary div{padding:8px 0;border-bottom:1px solid #333}
 </style>
 </head>
-
 <body>
-
-<div class="container">
-
-<div class="header">
-    <div class="logo">
-        <h1>HK 10K</h1>
-    </div>
-    <div class="tagline">#ENERGIMUEMASMU</div>
-</div>
-
-<div class="form-card">
-
-<div class="progress">
-    <div class="step active" id="s1">STEP 1<br>Data Peserta</div>
-    <div class="step" id="s2">STEP 2<br>Kategori</div>
-    <div class="step" id="s3">STEP 3<br>Konfirmasi</div>
+<div class="wrap">
+<div class="card">
+<div class="head">HK10K REGISTRATION - 3 STEP</div>
+<div class="steps">
+<div class="step active" id="s1">STEP 1</div>
+<div class="step" id="s2">STEP 2</div>
+<div class="step" id="s3">STEP 3</div>
 </div>
 
 <div class="content">
 
-<!-- STEP 1 -->
-<div class="page active" id="page1">
-
-<div class="title">Data Peserta</div>
-<div class="subtitle">Lengkapi informasi peserta lomba.</div>
-
-<div class="grid">
-
-<div>
-<div class="input-group">
-<label>Nama Lengkap</label>
-<input type="text" id="nama">
+<div class="page show" id="p1">
+<label>Nama Lengkap<input id="nama"></label>
+<label>Email<input id="email" type="email"></label>
+<label>WhatsApp<input id="wa"></label>
+<label>Tanggal Lahir<input id="tgl" type="date"></label>
+<label>Jenis Kelamin
+<select id="jk"><option value="">Pilih</option><option>Laki-Laki</option><option>Perempuan</option></select>
+</label>
+<div id="e1" class="err"></div>
+<div class="btns"><span></span><button class="next" onclick="go2()">Lanjut</button></div>
 </div>
 
-<div class="input-group">
-<label>Email</label>
-<input type="email" id="email">
+<div class="page" id="p2">
+<div class="opt sel" onclick="pilih(this,'HK10K RACE','Rp200.000')">
+<b>HK10K RACE</b><br>Rp200.000
 </div>
-
-<div class="input-group">
-<label>Nomor WhatsApp</label>
-<input type="text" id="wa">
+<div class="opt" onclick="pilih(this,'FUN RUN 5K/2.5K','GRATIS')">
+<b>FUN RUN 5K / 2.5K</b><br>GRATIS
 </div>
-</div>
-
-<div>
-<div class="input-group">
-<label>Tanggal Lahir</label>
-<input type="date" id="lahir">
-</div>
-
-<div class="input-group">
-<label>Jenis Kelamin</label>
-<select id="gender">
-<option>Laki-Laki</option>
-<option>Perempuan</option>
-</select>
-</div>
-
-<div class="input-group">
-<label>Kota</label>
-<input type="text" id="kota">
+<div class="btns">
+<button class="prev" onclick="show(1)">Kembali</button>
+<button class="next" onclick="go3()">Lanjut</button>
 </div>
 </div>
 
-</div>
-
-<div class="buttons">
-<div></div>
-<button class="btn-next" onclick="nextStep(2)">Lanjut →</button>
-</div>
-
-</div>
-
-<!-- STEP 2 -->
-<div class="page" id="page2">
-
-<div class="title">Pilih Kategori</div>
-<div class="subtitle">Pilih kategori lomba yang ingin diikuti.</div>
-
-<div class="category">
-
-<div class="card-option active"
-onclick="selectCategory(this,'HK 10K','Rp200.000')">
-
-<h3>HK 10K RACE</h3>
-<div class="price">Rp200.000</div>
-
-<div class="benefit">
-✓ Jersey Eksklusif<br>
-✓ Finisher Medal<br>
-✓ Goodie Bag<br>
-✓ Refreshment
-</div>
-
-</div>
-
-<div class="card-option"
-onclick="selectCategory(this,'FUN RUN 5K / 2.5K','GRATIS')">
-
-<h3>FUN RUN</h3>
-<div class="price">GRATIS</div>
-
-<div class="benefit">
-✓ Jersey Eksklusif<br>
-✓ Goodie Bag<br>
-✓ Refreshment
-</div>
-
-</div>
-
-</div>
-
-<div class="buttons">
-<button class="btn-prev" onclick="prevStep(1)">← Kembali</button>
-<button class="btn-next" onclick="showSummary()">Lanjut →</button>
-</div>
-
-</div>
-
-<!-- STEP 3 -->
-<div class="page" id="page3">
-
-<div class="title">Konfirmasi Pendaftaran</div>
-<div class="subtitle">Pastikan data sudah benar.</div>
-
+<div class="page" id="p3">
 <div class="summary">
-
-<div class="summary-row">
-<span>Nama</span>
-<span id="sumNama"></span>
+<div>Nama: <span id="sn"></span></div>
+<div>Email: <span id="se"></span></div>
+<div>WA: <span id="sw"></span></div>
+<div>Kategori: <span id="sk"></span></div>
+<div>Biaya: <span id="sb"></span></div>
 </div>
 
-<div class="summary-row">
-<span>Email</span>
-<span id="sumEmail"></span>
-</div>
+<h3>QRIS Pembayaran</h3>
+<p>Scan QRIS berikut (file harus bernama qris.png di folder yang sama).</p>
+<img src="qris.png" class="qr" onerror="this.alt='Letakkan qris.png di folder yang sama';">
 
-<div class="summary-row">
-<span>WhatsApp</span>
-<span id="sumWa"></span>
-</div>
+<label>Upload Bukti Pembayaran
+<input type="file" id="bukti" accept="image/*,.pdf">
+</label>
 
-<div class="summary-row">
-<span>Kategori</span>
-<span id="sumKategori"></span>
-</div>
+<label>
+<input type="checkbox" id="setuju" style="width:auto">
+Saya menyatakan data yang diisi benar.
+</label>
 
-<div class="summary-row">
-<span>Biaya</span>
-<span id="sumHarga"></span>
-</div>
+<div id="e3" class="err"></div>
 
+<div class="btns">
+<button class="prev" onclick="show(2)">Kembali</button>
+<button class="submit" onclick="submitForm()">Kirim Pendaftaran</button>
 </div>
-
-<div class="buttons">
-<button class="btn-prev" onclick="prevStep(2)">← Kembali</button>
-<button class="btn-submit" onclick="submitForm()">
-DAFTAR SEKARANG
-</button>
-</div>
-
 </div>
 
 </div>
 </div>
-
-<div class="footer">
-HK 10K Registration System © 2025
-</div>
-
 </div>
 
 <script>
+let kategori='HK10K RACE';
+let biaya='Rp200.000';
 
-let kategori="HK 10K";
-let harga="Rp200.000";
-
-function nextStep(step){
-
-document.querySelectorAll('.page').forEach(p=>{
-p.classList.remove('active');
-});
-
-document.querySelector('#page'+step).classList.add('active');
-
-document.querySelectorAll('.step').forEach(s=>{
-s.classList.remove('active');
-});
-
-document.querySelector('#s'+step).classList.add('active');
+function show(n){
+document.querySelectorAll('.page').forEach(x=>x.classList.remove('show'));
+document.getElementById('p'+n).classList.add('show');
+document.querySelectorAll('.step').forEach(x=>x.classList.remove('active'));
+document.getElementById('s'+n).classList.add('active');
 }
 
-function prevStep(step){
-nextStep(step);
+function go2(){
+let ids=['nama','email','wa','tgl','jk'];
+for(let i of ids){
+if(!document.getElementById(i).value.trim()){
+document.getElementById('e1').innerText='Semua data wajib diisi.';
+return;
+}
+}
+document.getElementById('e1').innerText='';
+show(2);
 }
 
-function selectCategory(el,kat,hrg){
-
-document.querySelectorAll('.card-option').forEach(c=>{
-c.classList.remove('active');
-});
-
-el.classList.add('active');
-
-kategori=kat;
-harga=hrg;
+function pilih(el,k,b){
+document.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));
+el.classList.add('sel');
+kategori=k; biaya=b;
 }
 
-function showSummary(){
-
-document.getElementById('sumNama').innerText=
-document.getElementById('nama').value;
-
-document.getElementById('sumEmail').innerText=
-document.getElementById('email').value;
-
-document.getElementById('sumWa').innerText=
-document.getElementById('wa').value;
-
-document.getElementById('sumKategori').innerText=
-kategori;
-
-document.getElementById('sumHarga').innerText=
-harga;
-
-nextStep(3);
+function go3(){
+document.getElementById('sn').innerText=nama.value;
+document.getElementById('se').innerText=email.value;
+document.getElementById('sw').innerText=wa.value;
+document.getElementById('sk').innerText=kategori;
+document.getElementById('sb').innerText=biaya;
+show(3);
 }
 
 function submitForm(){
-
-alert(
-'Pendaftaran Berhasil!\\n\\n' +
-'Kategori: ' + kategori +
-'\\nBiaya: ' + harga
-);
-
+if(biaya!=='GRATIS' && !bukti.files.length){
+e3.innerText='Upload bukti pembayaran wajib.';
+return;
 }
-
+if(!setuju.checked){
+e3.innerText='Centang persetujuan terlebih dahulu.';
+return;
+}
+e3.innerText='';
+alert('Pendaftaran berhasil dikirim!');
+}
 </script>
-
 </body>
 </html>
