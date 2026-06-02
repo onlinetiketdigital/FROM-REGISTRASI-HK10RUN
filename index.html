@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HK 10K Registration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.92)),
+    url('https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=1920');
+    background-size:cover;
+    background-position:center;
+    min-height:100vh;
+    color:white;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+    padding:30px 20px 60px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.logo{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 25px;
+    border:2px solid #ffcc33;
+    border-radius:50px;
+    background:rgba(255,204,51,.08);
+    box-shadow:0 0 20px rgba(255,204,51,.3);
+}
+
+.logo h1{
+    color:#ffcc33;
+    font-size:42px;
+    font-weight:800;
+}
+
+.tagline{
+    color:#f5d36c;
+    margin-top:10px;
+    letter-spacing:2px;
+    font-size:14px;
+}
+
+.form-card{
+    background:rgba(20,20,20,.95);
+    border:1px solid rgba(255,204,51,.25);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:
+    0 0 25px rgba(255,204,51,.15),
+    0 0 80px rgba(255,204,51,.05);
+}
+
+.progress{
+    display:flex;
+}
+
+.step{
+    flex:1;
+    text-align:center;
+    padding:18px;
+    font-weight:700;
+    background:#222;
+    color:#888;
+    border-right:1px solid #333;
+}
+
+.step.active{
+    background:linear-gradient(90deg,#ffcc33,#f5a623);
+    color:#111;
+}
+
+.content{
+    padding:30px;
+}
+
+.page{
+    display:none;
+    animation:fade .4s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.title{
+    font-size:28px;
+    font-weight:800;
+    color:#ffcc33;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#aaa;
+    margin-bottom:25px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    color:#f8d977;
+}
+
+input,select{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #444;
+    background:#111;
+    color:white;
+    outline:none;
+}
+
+input:focus,
+select:focus{
+    border-color:#ffcc33;
+    box-shadow:0 0 12px rgba(255,204,51,.3);
+}
+
+.category{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.card-option{
+    cursor:pointer;
+    border:2px solid #333;
+    border-radius:18px;
+    padding:18px;
+    background:#111;
+    transition:.3s;
+}
+
+.card-option:hover{
+    transform:translateY(-4px);
+    border-color:#ffcc33;
+}
+
+.card-option.active{
+    border-color:#ffcc33;
+    box-shadow:0 0 20px rgba(255,204,51,.25);
+}
+
+.card-option h3{
+    color:#ffcc33;
+}
+
+.price{
+    margin-top:10px;
+    font-size:28px;
+    font-weight:800;
+}
+
+.benefit{
+    margin-top:12px;
+    color:#bbb;
+    font-size:14px;
+}
+
+.summary{
+    background:#111;
+    border:1px solid #333;
+    padding:20px;
+    border-radius:16px;
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #222;
+}
+
+.summary-row:last-child{
+    border:none;
+}
+
+.buttons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:30px;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+    padding:14px 30px;
+    border-radius:14px;
+    font-weight:700;
+}
+
+.btn-prev{
+    background:#333;
+    color:white;
+}
+
+.btn-next,
+.btn-submit{
+    background:linear-gradient(90deg,#ffcc33,#f5a623);
+    color:#111;
+}
+
+.btn-submit{
+    font-size:16px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#777;
+    font-size:13px;
+}
+
+@media(max-width:768px){
+
+.grid,
+.category{
+    grid-template-columns:1fr;
+}
+
+.title{
+    font-size:24px;
+}
+
+.logo h1{
+    font-size:32px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+    <div class="logo">
+        <h1>HK 10K</h1>
+    </div>
+    <div class="tagline">#ENERGIMUEMASMU</div>
+</div>
+
+<div class="form-card">
+
+<div class="progress">
+    <div class="step active" id="s1">STEP 1<br>Data Peserta</div>
+    <div class="step" id="s2">STEP 2<br>Kategori</div>
+    <div class="step" id="s3">STEP 3<br>Konfirmasi</div>
+</div>
+
+<div class="content">
+
+<!-- STEP 1 -->
+<div class="page active" id="page1">
+
+<div class="title">Data Peserta</div>
+<div class="subtitle">Lengkapi informasi peserta lomba.</div>
+
+<div class="grid">
+
+<div>
+<div class="input-group">
+<label>Nama Lengkap</label>
+<input type="text" id="nama">
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" id="email">
+</div>
+
+<div class="input-group">
+<label>Nomor WhatsApp</label>
+<input type="text" id="wa">
+</div>
+</div>
+
+<div>
+<div class="input-group">
+<label>Tanggal Lahir</label>
+<input type="date" id="lahir">
+</div>
+
+<div class="input-group">
+<label>Jenis Kelamin</label>
+<select id="gender">
+<option>Laki-Laki</option>
+<option>Perempuan</option>
+</select>
+</div>
+
+<div class="input-group">
+<label>Kota</label>
+<input type="text" id="kota">
+</div>
+</div>
+
+</div>
+
+<div class="buttons">
+<div></div>
+<button class="btn-next" onclick="nextStep(2)">Lanjut →</button>
+</div>
+
+</div>
+
+<!-- STEP 2 -->
+<div class="page" id="page2">
+
+<div class="title">Pilih Kategori</div>
+<div class="subtitle">Pilih kategori lomba yang ingin diikuti.</div>
+
+<div class="category">
+
+<div class="card-option active"
+onclick="selectCategory(this,'HK 10K','Rp200.000')">
+
+<h3>HK 10K RACE</h3>
+<div class="price">Rp200.000</div>
+
+<div class="benefit">
+✓ Jersey Eksklusif<br>
+✓ Finisher Medal<br>
+✓ Goodie Bag<br>
+✓ Refreshment
+</div>
+
+</div>
+
+<div class="card-option"
+onclick="selectCategory(this,'FUN RUN 5K / 2.5K','GRATIS')">
+
+<h3>FUN RUN</h3>
+<div class="price">GRATIS</div>
+
+<div class="benefit">
+✓ Jersey Eksklusif<br>
+✓ Goodie Bag<br>
+✓ Refreshment
+</div>
+
+</div>
+
+</div>
+
+<div class="buttons">
+<button class="btn-prev" onclick="prevStep(1)">← Kembali</button>
+<button class="btn-next" onclick="showSummary()">Lanjut →</button>
+</div>
+
+</div>
+
+<!-- STEP 3 -->
+<div class="page" id="page3">
+
+<div class="title">Konfirmasi Pendaftaran</div>
+<div class="subtitle">Pastikan data sudah benar.</div>
+
+<div class="summary">
+
+<div class="summary-row">
+<span>Nama</span>
+<span id="sumNama"></span>
+</div>
+
+<div class="summary-row">
+<span>Email</span>
+<span id="sumEmail"></span>
+</div>
+
+<div class="summary-row">
+<span>WhatsApp</span>
+<span id="sumWa"></span>
+</div>
+
+<div class="summary-row">
+<span>Kategori</span>
+<span id="sumKategori"></span>
+</div>
+
+<div class="summary-row">
+<span>Biaya</span>
+<span id="sumHarga"></span>
+</div>
+
+</div>
+
+<div class="buttons">
+<button class="btn-prev" onclick="prevStep(2)">← Kembali</button>
+<button class="btn-submit" onclick="submitForm()">
+DAFTAR SEKARANG
+</button>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+HK 10K Registration System © 2025
+</div>
+
+</div>
+
+<script>
+
+let kategori="HK 10K";
+let harga="Rp200.000";
+
+function nextStep(step){
+
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
+});
+
+document.querySelector('#page'+step).classList.add('active');
+
+document.querySelectorAll('.step').forEach(s=>{
+s.classList.remove('active');
+});
+
+document.querySelector('#s'+step).classList.add('active');
+}
+
+function prevStep(step){
+nextStep(step);
+}
+
+function selectCategory(el,kat,hrg){
+
+document.querySelectorAll('.card-option').forEach(c=>{
+c.classList.remove('active');
+});
+
+el.classList.add('active');
+
+kategori=kat;
+harga=hrg;
+}
+
+function showSummary(){
+
+document.getElementById('sumNama').innerText=
+document.getElementById('nama').value;
+
+document.getElementById('sumEmail').innerText=
+document.getElementById('email').value;
+
+document.getElementById('sumWa').innerText=
+document.getElementById('wa').value;
+
+document.getElementById('sumKategori').innerText=
+kategori;
+
+document.getElementById('sumHarga').innerText=
+harga;
+
+nextStep(3);
+}
+
+function submitForm(){
+
+alert(
+'Pendaftaran Berhasil!\\n\\n' +
+'Kategori: ' + kategori +
+'\\nBiaya: ' + harga
+);
+
+}
+
+</script>
+
+</body>
+</html>
