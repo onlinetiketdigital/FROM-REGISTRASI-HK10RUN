@@ -3,129 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>HK10K Registration</title>
+<title>HK10K Premium Registration</title>
 <style>
-*{box-sizing:border-box;font-family:Arial,sans-serif}
-body{margin:0;background:#0f0f0f;color:#fff}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:#050505;color:#fff}
 .wrap{max-width:900px;margin:auto;padding:20px}
-.card{background:#181818;border:1px solid #d4af37;border-radius:18px;overflow:hidden}
-.head{padding:25px;text-align:center;background:linear-gradient(90deg,#d4af37,#f5d36c);color:#111;font-weight:bold}
+.card{background:#111;border:1px solid #d4af37;border-radius:20px;overflow:hidden;box-shadow:0 0 30px rgba(212,175,55,.25)}
+.head{padding:25px;text-align:center;background:linear-gradient(90deg,#d4af37,#f7d76b);color:#111;font-weight:800;font-size:24px}
 .steps{display:flex}
-.step{flex:1;padding:12px;text-align:center;background:#222;color:#888}
+.step{flex:1;padding:15px;text-align:center;background:#222;color:#777}
 .active{background:#d4af37!important;color:#111!important}
-.content{padding:20px}
-.page{display:none}
-.page.show{display:block}
-input,select{width:100%;padding:12px;margin-top:6px;background:#111;border:1px solid #444;color:#fff;border-radius:10px}
+.content{padding:25px}
+.page{display:none}.show{display:block}
 label{display:block;margin:12px 0}
+input,select{width:100%;padding:12px;background:#181818;border:1px solid #444;color:#fff;border-radius:10px}
 .btns{display:flex;justify-content:space-between;margin-top:20px}
-button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
+button{padding:12px 20px;border:none;border-radius:10px;font-weight:700;cursor:pointer}
 .next,.submit{background:#d4af37}
 .prev{background:#444;color:#fff}
-.opt{border:2px solid #444;padding:15px;border-radius:12px;margin:10px 0;cursor:pointer}
-.opt.sel{border-color:#d4af37}
-.err{color:#ff6b6b;font-size:13px}
-.qr{max-width:280px;width:100%;background:#fff;padding:10px;border-radius:10px}
+.opt{padding:16px;border:2px solid #444;border-radius:12px;margin:12px 0;cursor:pointer}
+.sel{border-color:#d4af37;box-shadow:0 0 15px rgba(212,175,55,.3)}
+.err{color:#ff6b6b;margin-top:10px}
+.qr{max-width:280px;width:100%;background:#fff;padding:10px;border-radius:12px}
 .summary div{padding:8px 0;border-bottom:1px solid #333}
-  /* ===== CINEMATIC PAYMENT LOADER ===== */
 
+/* Loader */
 #paymentLoader{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at center,#3b2b00 0%,#111 40%,#000 100%);
-z-index:99999;
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-overflow:hidden;
+display:none;position:fixed;inset:0;z-index:99999;
+background:radial-gradient(circle,#3b2b00,#000);
+justify-content:center;align-items:center;flex-direction:column;
 }
-
-.loader-ring{
-width:160px;
-height:160px;
-border-radius:50%;
+.ring{
+width:170px;height:170px;border-radius:50%;
 border:6px solid rgba(255,215,0,.15);
-border-top:6px solid #FFD700;
-animation:spin 1.2s linear infinite;
-box-shadow:
-0 0 20px #FFD700,
-0 0 50px rgba(255,215,0,.6);
+border-top:6px solid gold;
+animation:spin 1s linear infinite;
+box-shadow:0 0 30px gold;
 }
-
-.loader-title{
-margin-top:30px;
-font-size:28px;
-font-weight:700;
-letter-spacing:2px;
-color:#FFD700;
-text-align:center;
-text-transform:uppercase;
-animation:pulse 1.5s infinite;
-}
-
-.loader-sub{
-margin-top:10px;
-font-size:15px;
-color:#ddd;
-text-align:center;
-}
-
-.loader-count{
-margin-top:15px;
-font-size:42px;
-font-weight:bold;
-color:#fff;
-}
-
-.success-box{
-display:none;
-text-align:center;
-animation:fadeIn .8s ease;
-}
-
-.success-icon{
-font-size:90px;
-color:#00ff88;
-text-shadow:0 0 20px #00ff88;
-}
-
-.success-text{
-font-size:34px;
-font-weight:bold;
-margin-top:15px;
-color:#00ff88;
-}
-
-@keyframes spin{
-100%{transform:rotate(360deg);}
-}
-
-@keyframes pulse{
-50%{opacity:.4;}
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:scale(.8);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
+.title{margin-top:25px;font-size:28px;font-weight:700;color:gold;text-align:center}
+.sub{margin-top:10px;color:#ddd}
+.count{font-size:50px;margin-top:15px}
+.success{display:none;text-align:center}
+.success .icon{font-size:100px;color:#00ff88}
+.success .txt{font-size:34px;color:#00ff88;font-weight:700}
+@keyframes spin{100%{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
+
 <div class="wrap">
 <div class="card">
-<div class="head">HK10K REGISTRATION - 3 STEP</div>
+<div class="head">HK10K PREMIUM REGISTRATION</div>
+
 <div class="steps">
 <div class="step active" id="s1">STEP 1</div>
 <div class="step" id="s2">STEP 2</div>
@@ -140,51 +69,48 @@ transform:scale(1);
 <label>WhatsApp<input id="wa"></label>
 <label>Tanggal Lahir<input id="tgl" type="date"></label>
 <label>Jenis Kelamin
-<select id="jk"><option value="">Pilih</option><option>Laki-Laki</option><option>Perempuan</option></select>
+<select id="jk">
+<option value="">Pilih</option>
+<option>Laki-Laki</option>
+<option>Perempuan</option>
+</select>
 </label>
 <div id="e1" class="err"></div>
 <div class="btns"><span></span><button class="next" onclick="go2()">Lanjut</button></div>
 </div>
 
 <div class="page" id="p2">
-<div class="opt sel" onclick="pilih(this,'HK10K RACE','Rp200.000')">
-<b>HK10K RACE</b><br>Rp200.000
-</div>
-<div class="opt" onclick="pilih(this,'FUN RUN 5K/2.5K','GRATIS')">
-<b>FUN RUN 5K / 2.5K</b><br>GRATIS
-</div>
+<div class="opt sel" onclick="pilih(this,'HK10K RACE','Rp200.000')"><b>HK10K RACE</b><br>Rp200.000</div>
+<div class="opt" onclick="pilih(this,'FUN RUN','GRATIS')"><b>FUN RUN</b><br>GRATIS</div>
 <div class="btns">
-<button class="prev" onclick="show(1)">Kembali</button>
+<button class="prev" onclick="showPage(1)">Kembali</button>
 <button class="next" onclick="go3()">Lanjut</button>
 </div>
 </div>
 
 <div class="page" id="p3">
 <div class="summary">
-<div>Nama: <span id="sn"></span></div>
-<div>Email: <span id="se"></span></div>
-<div>WA: <span id="sw"></span></div>
-<div>Kategori: <span id="sk"></span></div>
-<div>Biaya: <span id="sb"></span></div>
+<div>Nama : <span id="sn"></span></div>
+<div>Email : <span id="se"></span></div>
+<div>WA : <span id="sw"></span></div>
+<div>Kategori : <span id="sk"></span></div>
+<div>Biaya : <span id="sb"></span></div>
 </div>
 
-<h3>QRIS Pembayaran</h3>
-<p>Scan QRIS berikut (file harus bernama qris.png di folder yang sama).</p>
-<img src="qris.png" class="qr" onerror="this.alt='Letakkan qris.png di folder yang sama';">
+<h3 style="margin-top:20px">QRIS Pembayaran</h3>
+<p>Letakkan file qris.png dalam folder yang sama.</p>
+<img src="qris.png" class="qr">
 
 <label>Upload Bukti Pembayaran
 <input type="file" id="bukti" accept="image/*,.pdf">
 </label>
 
-<label>
-<input type="checkbox" id="setuju" style="width:auto">
-Saya menyatakan data yang diisi benar.
-</label>
+<label><input type="checkbox" id="setuju" style="width:auto"> Saya menyetujui data di atas.</label>
 
 <div id="e3" class="err"></div>
 
 <div class="btns">
-<button class="prev" onclick="show(2)">Kembali</button>
+<button class="prev" onclick="showPage(2)">Kembali</button>
 <button class="submit" onclick="submitForm()">Kirim Pendaftaran</button>
 </div>
 </div>
@@ -193,11 +119,25 @@ Saya menyatakan data yang diisi benar.
 </div>
 </div>
 
-<script>
-let kategori='HK10K RACE';
-let biaya='Rp200.000';
+<div id="paymentLoader">
+<div id="loadingBox">
+<div class="ring"></div>
+<div class="title">PEMBAYARAN SEDANG<br>DI VERIFIKASI</div>
+<div class="sub">Mohon tunggu...</div>
+<div class="count" id="countdown">30</div>
+</div>
 
-function show(n){
+<div class="success" id="successBox">
+<div class="icon">✓</div>
+<div class="txt">PEMBAYARAN BERHASIL</div>
+<div class="sub">Redirect ke halaman awal...</div>
+</div>
+</div>
+
+<script>
+let kategori='HK10K RACE', biaya='Rp200.000';
+
+function showPage(n){
 document.querySelectorAll('.page').forEach(x=>x.classList.remove('show'));
 document.getElementById('p'+n).classList.add('show');
 document.querySelectorAll('.step').forEach(x=>x.classList.remove('active'));
@@ -205,43 +145,49 @@ document.getElementById('s'+n).classList.add('active');
 }
 
 function go2(){
-let ids=['nama','email','wa','tgl','jk'];
-for(let i of ids){
+for(let i of ['nama','email','wa','tgl','jk']){
 if(!document.getElementById(i).value.trim()){
-document.getElementById('e1').innerText='Semua data wajib diisi.';
-return;
-}
-}
-document.getElementById('e1').innerText='';
-show(2);
+e1.innerText='Semua data wajib diisi';return;
+}}
+e1.innerText='';showPage(2);
 }
 
 function pilih(el,k,b){
 document.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));
-el.classList.add('sel');
-kategori=k; biaya=b;
+el.classList.add('sel');kategori=k;biaya=b;
 }
 
 function go3(){
-document.getElementById('sn').innerText=nama.value;
-document.getElementById('se').innerText=email.value;
-document.getElementById('sw').innerText=wa.value;
-document.getElementById('sk').innerText=kategori;
-document.getElementById('sb').innerText=biaya;
-show(3);
+sn.innerText=nama.value;
+se.innerText=email.value;
+sw.innerText=wa.value;
+sk.innerText=kategori;
+sb.innerText=biaya;
+showPage(3);
 }
 
 function submitForm(){
-if(biaya!=='GRATIS' && !bukti.files.length){
-e3.innerText='Upload bukti pembayaran wajib.';
-return;
-}
-if(!setuju.checked){
-e3.innerText='Centang persetujuan terlebih dahulu.';
-return;
-}
+if(biaya!='GRATIS' && !bukti.files.length){e3.innerText='Upload bukti pembayaran';return;}
+if(!setuju.checked){e3.innerText='Centang persetujuan';return;}
 e3.innerText='';
-alert('Pendaftaran berhasil dikirim!');
+
+paymentLoader.style.display='flex';
+let s=30;
+countdown.innerText=s;
+
+let t=setInterval(()=>{
+s--;
+countdown.innerText=s;
+if(s<=0){
+clearInterval(t);
+loadingBox.style.display='none';
+successBox.style.display='block';
+
+setTimeout(()=>{
+location.reload();
+},3000);
+}
+},1000);
 }
 </script>
 </body>
