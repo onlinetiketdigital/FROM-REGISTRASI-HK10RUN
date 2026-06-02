@@ -27,6 +27,99 @@ button{padding:12px 20px;border:none;border-radius:10px;font-weight:bold;cursor:
 .err{color:#ff6b6b;font-size:13px}
 .qr{max-width:280px;width:100%;background:#fff;padding:10px;border-radius:10px}
 .summary div{padding:8px 0;border-bottom:1px solid #333}
+  /* ===== CINEMATIC PAYMENT LOADER ===== */
+
+#paymentLoader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at center,#3b2b00 0%,#111 40%,#000 100%);
+z-index:99999;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+overflow:hidden;
+}
+
+.loader-ring{
+width:160px;
+height:160px;
+border-radius:50%;
+border:6px solid rgba(255,215,0,.15);
+border-top:6px solid #FFD700;
+animation:spin 1.2s linear infinite;
+box-shadow:
+0 0 20px #FFD700,
+0 0 50px rgba(255,215,0,.6);
+}
+
+.loader-title{
+margin-top:30px;
+font-size:28px;
+font-weight:700;
+letter-spacing:2px;
+color:#FFD700;
+text-align:center;
+text-transform:uppercase;
+animation:pulse 1.5s infinite;
+}
+
+.loader-sub{
+margin-top:10px;
+font-size:15px;
+color:#ddd;
+text-align:center;
+}
+
+.loader-count{
+margin-top:15px;
+font-size:42px;
+font-weight:bold;
+color:#fff;
+}
+
+.success-box{
+display:none;
+text-align:center;
+animation:fadeIn .8s ease;
+}
+
+.success-icon{
+font-size:90px;
+color:#00ff88;
+text-shadow:0 0 20px #00ff88;
+}
+
+.success-text{
+font-size:34px;
+font-weight:bold;
+margin-top:15px;
+color:#00ff88;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+@keyframes pulse{
+50%{opacity:.4;}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
 </style>
 </head>
 <body>
